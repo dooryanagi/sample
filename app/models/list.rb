@@ -5,6 +5,8 @@ class List < ApplicationRecord
   # 空欄では投稿できないようにバリデーションを設定する
   validates :title, presence: true
   validates :body, presence: true
+  
+  # rails cの時は簡易化のためにimageへの制限をコメントアウトする
   validates :image, presence: true
 
 end
