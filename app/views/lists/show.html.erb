@@ -5,12 +5,14 @@
 <p><%= @list.body %></p>
 
 <h2>画像</h2>
-<% if @list.image.attached? %>
+<!--% if @list.image.attached? %>-->
 <!--画像のサイズを指定しているが、実際は指定できていない？「×」が正しい？「*」でない？-->
-  <%= image_tag @list.image, size: "300×300" %>
-<% else %>
-  <%= image_tag 'no_image', size: "300*300" %>
-<% end %>
+<!--%= image_tag @list.image, size: "300×300" %>-->
+<!--% else %>-->
+<!--%= image_tag 'no_image', size: "300*300" %>-->
+<!--% end %>-->
+
+<%= image_tag @list.image, size: "300×300" %>
 
 <%= link_to "編集", edit_list_path(@list.id) %>
 <!--削除ボタンを作成-->

@@ -1,5 +1,15 @@
 <h1>新規投稿</h1>
 
+<!--デバックの結果エラーがあった場合エラー文を表示する-->
+<% if @list.errors.any? %>
+  <%= @list.errors.count %>件分のエラーが発生しました
+  <ul>
+    <% @list.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <!--form_with部分-->
 <!--Listモデルの情報をもとに新しくオブジェクトを作成する-->
 <!--List.new→＠listに修正-->
