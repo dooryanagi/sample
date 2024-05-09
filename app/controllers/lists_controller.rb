@@ -13,10 +13,15 @@ class ListsController < ApplicationController
     # （4）トップ画面へリダイレクト→詳細画面へリダイレクト
     # redirect_to list_path(list.id)
 
+    # (1)データを受け取り新規登録するためのインスタンス作成
     @list = List.new(list_params)
+    #（2）データをデータベースに保存するためのsaveメソッド実行
     if @list.save
+      # （3）フラッシュメッセージを定義、詳細画面へリダイレクト
+      flash[:notice] = "投稿に成功しました"
       redirect_to list_path(@list.id)
     else
+      flash.now[:alert] = "投稿に失敗しました"
       render :new
     end
   end
