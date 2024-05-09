@@ -12,10 +12,10 @@ class ListsController < ApplicationController
     # list.save
     # （4）トップ画面へリダイレクト→詳細画面へリダイレクト
     # redirect_to list_path(list.id)
-    
+
     @list = List.new(list_params)
     if @list.save
-      redirect_to_list_path(@list.id)
+      redirect_to list_path(@list.id)
     else
       render :new
     end
