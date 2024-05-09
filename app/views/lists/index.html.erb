@@ -8,4 +8,13 @@
     <%= link_to list.title, list_path(list.id) %>
   </span>
 
+  <p>画像</p>
+  <!--HTMLのimgタグを生成するimage_tagヘルパーを使用する-->
+  <!--　（%=の中にもif構文は作ることができる-->
+  <% if list.image.attached? %>
+    <%= image_tag list.image, size: "200*200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200*200" %>
+  <% end %>
+
 <% end %>
